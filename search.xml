@@ -1,221 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Readme</title>
-    <url>/2020/10/13/Readme/</url>
-    <content><![CDATA[<h1 id="Landscape"><a href="#Landscape" class="headerlink" title="Landscape"></a>Landscape</h1><p>A brand new default theme for <a href="https://hexo.io/">Hexo</a>.</p>
-<ul>
-<li><a href="http://hexo.io/hexo-theme-landscape/">Preview</a></li>
-</ul>
-<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/hexojs/hexo-theme-landscape.git themes/landscape</span><br></pre></td></tr></table></figure>
-
-<p><strong>Landscape requires Hexo 2.4 and above.</strong> If you would like to <em>enable</em> the RSS, the <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generate-feed</a> plugin is also required.</p>
-<h3 id="Enable"><a href="#Enable" class="headerlink" title="Enable"></a>Enable</h3><p>Modify <code>theme</code> setting in <code>_config.yml</code> to <code>landscape</code>.</p>
-<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/landscape</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<h3 id="Update-1"><a href="#Update-1" class="headerlink" title="Update"></a><em>Update</em></h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cd themes/landscape</span></span><br><span class="line"><span class="string">git</span> <span class="string">pull</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  Archives: /archives</span><br><span class="line">rss: /atom.xml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line">excerpt_link: Read More</span><br><span class="line">fancybox: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sidebar</span></span><br><span class="line">sidebar: right</span><br><span class="line">widgets:</span><br><span class="line">- category</span><br><span class="line">- tag</span><br><span class="line">- tagcloud</span><br><span class="line">- archives</span><br><span class="line">- recent_posts</span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line">google_analytics:</span><br><span class="line">favicon: /favicon.png</span><br><span class="line">twitter:</span><br><span class="line">google_plus:</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>menu</strong> - Navigation menu</li>
-<li><strong>rss</strong> - RSS link</li>
-<li><strong>excerpt_link</strong> - “Read More” link at the bottom of excerpted articles. <code>false</code> to hide the link.</li>
-<li><strong>fancybox</strong> - Enable <a href="http://fancyapps.com/fancybox/">Fancybox</a></li>
-<li><strong>sidebar</strong> - <code>Sidebar style</code>. You can <a href="https://hexo.io/docs/writing.html">choose</a> <code>left</code>, <code>right</code>, <code>bottom</code> or <code>false</code>.</li>
-<li><strong>widgets</strong> - Widgets displaying in sidebar</li>
-<li><strong>google_analytics</strong> - Google Analytics ID</li>
-<li><strong>favicon</strong> - Favicon path</li>
-<li><strong>twitter</strong> - Twiiter ID</li>
-<li><strong>google_plus</strong> - Google+ ID</li>
-</ul>
-<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p>Landscape uses <a href="http://fancyapps.com/fancybox/">Fancybox</a> to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![img caption](img url)</span><br><span class="line"></span><br><span class="line">&#123;% fancybox img_url [img_thumbnail] [img_caption] %&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Sidebar"><a href="#Sidebar" class="headerlink" title="Sidebar"></a>Sidebar</h3><p>You can put your sidebar in left side, right side or bottom of your site by editing <a href>sidebar</a> setting.</p>
-<p>Landscape provides 5 built-in widgets:</p>
-<ul>
-<li>category</li>
-<li>tag</li>
-<li>tagcloud</li>
-<li>archives</li>
-<li>recent_posts</li>
-</ul>
-<p>All of them are enabled by default. You can edit them in <code>widget</code> setting.</p>
-<h2 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h2><h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h3><ul>
-<li><a href="http://gruntjs.com/">Grunt</a> 0.4+</li>
-<li>Hexo 2.4+</li>
-</ul>
-<h3 id="Grunt-tasks"><a href="#Grunt-tasks" class="headerlink" title="Grunt tasks"></a>Grunt tasks</h3><ul>
-<li><strong>default</strong> - Download <a href="http://fancyapps.com/fancybox/">Fancybox</a> and <a href="http://fontawesome.io/">Font Awesome</a>.</li>
-<li><strong>fontawesome</strong> - Only download <a href="http://fontawesome.io/">Font Awesome</a>.</li>
-<li><strong>fancybox</strong> - Only download <a href="http://fancyapps.com/fancybox/">Fancybox</a>.</li>
-<li><strong>clean</strong> - Clean temporarily files and downloaded files.</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/10/14/hello/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><h4 id="Create-a-new-post-temporarily"><a href="#Create-a-new-post-temporarily" class="headerlink" title="Create a new post temporarily"></a>Create a new post temporarily</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<p><code>### Deploy to remote sites</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="2020/10/14/hello/"/>
+      <url>2020/10/14/hello/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><h4 id="Create-a-new-post-temporarily"><a href="#Create-a-new-post-temporarily" class="headerlink" title="Create a new post temporarily"></a>Create a new post temporarily</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><p><code>### Deploy to remote sites</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
       <categories>
-        <category>hexo hello</category>
+          
+          <category> hexo hello </category>
+          
       </categories>
-      <tags>
-        <tag>Hello</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>About Work</title>
-    <url>/2020/10/14/Work/</url>
-    <content><![CDATA[<h1 id="Abstract-Here"><a href="#Abstract-Here" class="headerlink" title="Abstract Here"></a>Abstract Here</h1><p>I work in <strong><em>SMarCo</em></strong>  <strong>SMarCo</strong> <strong>SMarco</strong>, <em>SMarco</em>, <em>SMarCo</em></p>
-<hr>
-<p>这样来 <del>删除一段文本</del></p>
-<hr>
-<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p><code>Landscape uses</code><br><code>Landscape uses</code></p>
-<h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p><a href="http://zhuzhuyule.xyz/">首页</a><br><a href="/2020/10/13/Readme">我的信息</a><br><a href="https://love.zhuzhuyule.xyz/">纪念册</a></p>
-<ul>
-<li>*列表展示<ul>
-<li>*列表展示</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>+列表展示<ul>
-<li>+列表展示</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>-列表展示<ul>
-<li>-列表展示</li>
-</ul>
-</li>
-</ul>
-<p>这种方式不用手动设置序号，自动生成列表序列</p>
-<ol>
-<li><strong>我是一级序列</strong> <ol>
-<li><em>我是二级序列</em> </li>
-</ol>
-</li>
-<li><strong>我是一级序列</strong> <ol>
-<li><em>我是二级序列</em> </li>
-<li>还是二级序列，没有三级序列 </li>
-</ol>
-</li>
-</ol>
-<p>首页:<a href="http://zhuzhuyule.xyz/">http://zhuzhuyule.xyz</a><br>我的信息:<a href="http://zhuzhuyule.xyz/about/">http://zhuzhuyule.xyz/about/</a><br>纪念册:<a href="https://love.zhuzhuyule.xyz/">https://love.zhuzhuyule.xyz/</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">&#x27;Hello World! </span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">print</span> <span class="string">&#x27;Hello World! </span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Hello World! </span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">print &#39;Hello World! </span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>列1</th>
-<th>列2</th>
-<th>列3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>第1行</td>
-<td>12</td>
-<td>13</td>
-</tr>
-<tr>
-<td>第2行</td>
-<td>22</td>
-<td>23</td>
-</tr>
-<tr>
-<td>第3行</td>
-<td>32</td>
-<td>33</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Computer</td>
-<td align="right">5000 元</td>
-<td align="center">1台</td>
-</tr>
-<tr>
-<td align="left">Phone</td>
-<td align="right">1999 元</td>
-<td align="center">1部</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>Landscape uses <a href="www.baidu.com">Fancybox</a> to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.</p>
-</blockquote>
-<figure class="highlight plain"><figcaption><span>每行开始都使用 '>'；</span></figcaption><table><tr><td class="code"><pre><span class="line">引用**开始**；</span><br><span class="line">引用**换行**；</span><br><span class="line">引用**结束**。</span><br><span class="line"></span><br><span class="line">&gt; 还在引用中！</span><br><span class="line">两个回车结束引用！</span><br></pre></td></tr></table></figure>
-
-<p>amet</p>
-<blockquote><p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit,<br>quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
-</blockquote>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span><br><span class="line">Pellentesque hendrerit lacus ut purus iaculis feugiat. </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br><span class="line">Sed nec tempor elit, quis aliquam neque.</span><br><span class="line"> Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><figcaption><span>Array.mapq</span></figcaption><table><tr><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br><span class="line">Sed nec tempor elit, quis aliquam neque.</span><br><span class="line"> Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-
-<p><code>&#123;% youtube PL9hW1uS6HUfscJ9DHkOSoOX45MjXduUxo 'playlist' %&#125;</code></p>
-<blockquote class="pullquote class"><p>content<br>Do not just seek happiness for yourself. S</p>
-</blockquote>
-
-<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-
-<a href="http://underscorejs.org/#compact" title target>text</a>
-<p><a href="http://underscorejs.org/#compact">test</a></p>
-<a href="/2020/10/14/hello/" title="Link to a post">Link to a post</a>
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&#123;% asset_img banner.jpg This is an example image %&#125;)</span><br><span class="line">&#123;% asset_img &quot;banner.jpg&quot; &quot;spaced title&quot; %&#125;</span><br><span class="line"></span><br><span class="line">![](banner.jpg)</span><br></pre></td></tr></table></figure>
-
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Hello </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>About WorkPlace</title>
+      <link href="2020/10/14/About-WorkPlace/"/>
+      <url>2020/10/14/About-WorkPlace/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Abstract-Here"><a href="#Abstract-Here" class="headerlink" title="Abstract Here"></a>Abstract Here</h1><p>I work in <strong><em>SMarCo</em></strong>  <strong>SMarCo</strong> <strong>SMarco</strong>, <em>SMarco</em>, <em>SMarCo</em></p><h3 id="Smarco"><a href="#Smarco" class="headerlink" title="Smarco"></a>Smarco</h3><p><strong>smart</strong> and the <em><u>simple way to write text</u></em> now</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](banner.jpg)</span><br></pre></td></tr></table></figure><p><strong>here wo just go to test the bolde</strong> and the <em>to test the inclined way</em></p><ol><li>sf</li><li>dfagfag</li><li>dafag </li><li>fsgafd </li><li>adf </li></ol><table><thead><tr><th>Name</th><th>age</th><th>love</th></tr></thead><tbody><tr><td>yuechangjin</td><td>35</td><td>zhengye</td></tr><tr><td>zhengye</td><td>33</td><td>yuechangjin</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><ul><li>yes</li><li>ok</li><li>no</li></ul><p>aliquam neque.</p><p> Curabitur sed </p><p>diam eg</p><p><code>Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit,</code><br><code>quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</code></p><p>Landscape uses <a href="www.baidu.com">Fancybox</a> to <u>showcase your photo</u>s. You can use Markdown syntax or fancybox tag plugin to add your pho</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https:&#x2F;&#x2F;vkceyugu.cdn.bspapp.com&#x2F;VKCEYUGU-imgbed&#x2F;5d90720e-6179-40e2-bc20-6f4e80f8f472.jpg</span><br><span class="line">https:&#x2F;&#x2F;imgbed.cn&#x2F;preview?id&#x3D;5f8a63d5fcfc0c000145715e</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure><blockquote><p>Landscape uses <a href="www.baidu.com">Fancybox</a> to <a href="www.baidu.com">showcase</a> your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.</p></blockquote><h2 id="Tab-Key"><a href="#Tab-Key" class="headerlink" title="Tab Key"></a>Tab Key</h2><pre><code>Landscape uses [Fancybox](www.baidu.com) to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.这样来 ~~删除一段文本~~</code></pre><hr><h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p><code>Landscape uses</code><br><code>Landscape uses</code></p><h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p><a href="http://zhuzhuyule.xyz/">首页</a><br><a href="/2020/10/13/Readme">我的信息</a><br><a href="https://love.zhuzhuyule.xyz/">纪念册</a></p><ul><li>*列表展示<ul><li>*列表展示</li></ul></li></ul><ul><li>+列表展示<ul><li>+列表展示</li></ul></li></ul><ul><li>-列表展示<ul><li>-列表展示</li></ul></li></ul><p>这种方式不用手动设置序号，自动生成列表序列</p><ol><li><strong>我是一级序列</strong> <ol><li><em>我是二级序列</em> </li></ol></li><li><strong>我是一级序列</strong> <ol><li><em>我是二级序列</em> </li><li>还是二级序列，没有三级序列 </li></ol></li></ol><p>首页:<a href="http://zhuzhuyule.xyz/">http://zhuzhuyule.xyz</a><br>我的信息:<a href="http://zhuzhuyule.xyz/about/">http://zhuzhuyule.xyz/about/</a><br>纪念册:<a href="https://love.zhuzhuyule.xyz/">https://love.zhuzhuyule.xyz/</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">&#x27;Hello World! </span></span><br><span class="line"><span class="string">Landscape uses [Fancybox](www.baidu.com) to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photo</span></span><br></pre></td></tr></table></figure><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">print</span> <span class="string">&#x27;Hello World! </span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Hello World! </span></span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">print &#39;Hello World! </span><br></pre></td></tr></table></figure><table><thead><tr><th>列1</th><th>列2</th><th>列3</th></tr></thead><tbody><tr><td>第1行</td><td>12</td><td>13</td></tr><tr><td>第2行</td><td>22</td><td>23</td></tr><tr><td>第3行</td><td>32</td><td>33</td></tr></tbody></table><table><thead><tr><th align="left">左对齐</th><th align="right">右对齐</th><th align="center">居中</th></tr></thead><tbody><tr><td align="left">Computer</td><td align="right">5000 元</td><td align="center">1台</td></tr><tr><td align="left">Phone</td><td align="right">1999 元</td><td align="center">1部</td></tr></tbody></table><figure class="highlight plain"><figcaption><span>每行开始都使用 '>'；</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">引用**开始**；</span><br><span class="line">引用**换行**；</span><br><span class="line">引用**结束**。</span><br><span class="line"></span><br><span class="line">&gt; 还在引用中！</span><br><span class="line">两个回车结束引用！</span><br></pre></td></tr></table></figure><p>amet</p><blockquote><p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit,<br>quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span><br><span class="line">Pellentesque hendrerit lacus ut purus iaculis feugiat. </span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br><span class="line">Sed nec tempor elit, quis aliquam neque.</span><br><span class="line"> Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>Array.mapq</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br><span class="line">Sed nec tempor elit, quis aliquam neque.</span><br><span class="line"> Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><p><code>&#123;% youtube PL9hW1uS6HUfscJ9DHkOSoOX45MjXduUxo 'playlist' %&#125;</code></p><blockquote class="pullquote class"><p>content<br>Do not just seek happiness for yourself. S</p></blockquote><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><a href="http://underscorejs.org/#compact" title target>text</a><p><a href="http://underscorejs.org/#compact">test</a></p><a href="/2020/10/14/hello/" title="Link to a post">Link to a post</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;% asset_img banner.jpg This is an example image %&#125;)</span><br><span class="line">&#123;% asset_img &quot;banner.jpg&quot; &quot;spaced title&quot; %&#125;</span><br><span class="line"></span><br><span class="line">![](banner.jpg)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>About Work</category>
+          
+          <category> About WorkPlace </category>
+          
       </categories>
-      <tags>
-        <tag>about</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>About Me</title>
-    <url>/2020/10/14/about/me/</url>
-    <content><![CDATA[<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>I an an engineer of SMarCo</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> about </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>About Work</title>
+      <link href="2020/10/14/Work/"/>
+      <url>2020/10/14/Work/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Abstract-Here"><a href="#Abstract-Here" class="headerlink" title="Abstract Here"></a>Abstract Here</h1><p>I work in <strong><em>SMarCo</em></strong>  <strong>SMarCo</strong> <strong>SMarco</strong>, <em>SMarco</em>, <em>SMarCo</em><br><img src="/2020/10/14/Work/banner.jpg"></p><h3 id="Smarco"><a href="#Smarco" class="headerlink" title="Smarco"></a>Smarco</h3><p><strong>smart</strong> and the <em><u>simple way to write text</u></em> now</p><p><code>Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit,</code><br><code>quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;vkceyugu.cdn.bspapp.com&#x2F;VKCEYUGU-imgbed&#x2F;5d90720e-6179-40e2-bc20-6f4e80f8f472.jpg</span><br><span class="line">https:&#x2F;&#x2F;imgbed.cn&#x2F;preview?id&#x3D;5f8a63d5fcfc0c000145715e</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure><blockquote><p>Landscape uses <a href="www.baidu.com">Fancybox</a> to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.</p></blockquote><h2 id="Tab-Key"><a href="#Tab-Key" class="headerlink" title="Tab Key"></a>Tab Key</h2><pre><code>Landscape uses [Fancybox](www.baidu.com) to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.这样来 ~~删除一段文本~~</code></pre><hr><h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p><code>Landscape uses</code><br><code>Landscape uses</code></p><h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p><a href="http://zhuzhuyule.xyz/">首页</a><br><a href="/2020/10/13/Readme">我的信息</a><br><a href="https://love.zhuzhuyule.xyz/">纪念册</a></p><ul><li>*列表展示<ul><li>*列表展示</li></ul></li></ul><ul><li>+列表展示<ul><li>+列表展示</li></ul></li></ul><ul><li>-列表展示<ul><li>-列表展示</li></ul></li></ul><p>这种方式不用手动设置序号，自动生成列表序列</p><ol><li><strong>我是一级序列</strong> <ol start="2"><li><em>我是二级序列</em> </li></ol></li><li><strong>我是一级序列</strong> <ol start="4"><li><em>我是二级序列</em> </li><li>还是二级序列，没有三级序列 </li></ol></li></ol><p>首页:<a href="http://zhuzhuyule.xyz/">http://zhuzhuyule.xyz</a><br>我的信息:<a href="http://zhuzhuyule.xyz/about/">http://zhuzhuyule.xyz/about/</a><br>纪念册:<a href="https://love.zhuzhuyule.xyz/">https://love.zhuzhuyule.xyz/</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">&#x27;Hello World! </span></span><br><span class="line"><span class="string">Landscape uses [Fancybox](www.baidu.com) to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photo</span></span><br></pre></td></tr></table></figure><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env yml</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">print</span> <span class="string">&#x27;Hello World! </span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Hello World! </span></span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">print &#39;Hello World! </span><br></pre></td></tr></table></figure><table><thead><tr><th>列1</th><th>列2</th><th>列3</th></tr></thead><tbody><tr><td>第1行</td><td>12</td><td>13</td></tr><tr><td>第2行</td><td>22</td><td>23</td></tr><tr><td>第3行</td><td>32</td><td>33</td></tr></tbody></table><table><thead><tr><th align="left">左对齐</th><th align="right">右对齐</th><th align="center">居中</th></tr></thead><tbody><tr><td align="left">Computer</td><td align="right">5000 元</td><td align="center">1台</td></tr><tr><td align="left">Phone</td><td align="right">1999 元</td><td align="center">1部</td></tr></tbody></table><figure class="highlight plain"><figcaption><span>每行开始都使用 '>'；</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">引用**开始**；</span><br><span class="line">引用**换行**；</span><br><span class="line">引用**结束**。</span><br><span class="line"></span><br><span class="line">&gt; 还在引用中！</span><br><span class="line">两个回车结束引用！</span><br></pre></td></tr></table></figure><p>amet</p><blockquote><p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit,<br>quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span><br><span class="line">Pellentesque hendrerit lacus ut purus iaculis feugiat. </span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br><span class="line">Sed nec tempor elit, quis aliquam neque.</span><br><span class="line"> Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>Array.mapq</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br><span class="line">Sed nec tempor elit, quis aliquam neque.</span><br><span class="line"> Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><p><code>&#123;% youtube PL9hW1uS6HUfscJ9DHkOSoOX45MjXduUxo 'playlist' %&#125;</code></p><blockquote class="pullquote class"><p>content<br>Do not just seek happiness for yourself. S</p></blockquote><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><a href="http://underscorejs.org/#compact" title target>text</a><p><a href="http://underscorejs.org/#compact">test</a></p><a href="/2020/10/14/hello/" title="Link to a post">Link to a post</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img banner.jpg This is an example image %&#125;)</span><br><span class="line">&#123;% asset_img &quot;banner.jpg&quot; &quot;spaced title&quot; %&#125;</span><br><span class="line"></span><br><span class="line">![](banner.jpg)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>About Work</category>
-        <category>About Me</category>
+          
+          <category> About Work </category>
+          
       </categories>
-      <tags>
-        <tag>about</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> about </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>About Me</title>
+      <link href="2020/10/14/about/me/"/>
+      <url>2020/10/14/about/me/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>I an an engineer of SMarCo</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> About Work </category>
+          
+          <category> About Me </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> about </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Readme</title>
+      <link href="2020/10/13/Readme/"/>
+      <url>2020/10/13/Readme/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Landscape"><a href="#Landscape" class="headerlink" title="Landscape"></a>Landscape</h1><p>A brand new default theme for <a href="https://hexo.io/">Hexo</a>.</p><ul><li><a href="http://hexo.io/hexo-theme-landscape/">Preview</a></li></ul><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/hexojs/hexo-theme-landscape.git themes/landscape</span><br></pre></td></tr></table></figure><p><strong>Landscape requires Hexo 2.4 and above.</strong> If you would like to <em>enable</em> the RSS, the <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generate-feed</a> plugin is also required.</p><h3 id="Enable"><a href="#Enable" class="headerlink" title="Enable"></a>Enable</h3><p>Modify <code>theme</code> setting in <code>_config.yml</code> to <code>landscape</code>.</p><h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/landscape</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><h3 id="Update-1"><a href="#Update-1" class="headerlink" title="Update"></a><em>Update</em></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd themes/landscape</span></span><br><span class="line"><span class="string">git</span> <span class="string">pull</span></span><br></pre></td></tr></table></figure><h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  Archives: /archives</span><br><span class="line">rss: /atom.xml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line">excerpt_link: Read More</span><br><span class="line">fancybox: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sidebar</span></span><br><span class="line">sidebar: right</span><br><span class="line">widgets:</span><br><span class="line">- category</span><br><span class="line">- tag</span><br><span class="line">- tagcloud</span><br><span class="line">- archives</span><br><span class="line">- recent_posts</span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line">google_analytics:</span><br><span class="line">favicon: /favicon.png</span><br><span class="line">twitter:</span><br><span class="line">google_plus:</span><br></pre></td></tr></table></figure><ul><li><strong>menu</strong> - Navigation menu</li><li><strong>rss</strong> - RSS link</li><li><strong>excerpt_link</strong> - “Read More” link at the bottom of excerpted articles. <code>false</code> to hide the link.</li><li><strong>fancybox</strong> - Enable <a href="http://fancyapps.com/fancybox/">Fancybox</a></li><li><strong>sidebar</strong> - <code>Sidebar style</code>. You can <a href="https://hexo.io/docs/writing.html">choose</a> <code>left</code>, <code>right</code>, <code>bottom</code> or <code>false</code>.</li><li><strong>widgets</strong> - Widgets displaying in sidebar</li><li><strong>google_analytics</strong> - Google Analytics ID</li><li><strong>favicon</strong> - Favicon path</li><li><strong>twitter</strong> - Twiiter ID</li><li><strong>google_plus</strong> - Google+ ID</li></ul><h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p>Landscape uses <a href="http://fancyapps.com/fancybox/">Fancybox</a> to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![img caption](img url)</span><br><span class="line"></span><br><span class="line">&#123;% fancybox img_url [img_thumbnail] [img_caption] %&#125;</span><br></pre></td></tr></table></figure><h3 id="Sidebar"><a href="#Sidebar" class="headerlink" title="Sidebar"></a>Sidebar</h3><p>You can put your sidebar in left side, right side or bottom of your site by editing <a href>sidebar</a> setting.</p><p>Landscape provides 5 built-in widgets:</p><ul><li>category</li><li>tag</li><li>tagcloud</li><li>archives</li><li>recent_posts</li></ul><p>All of them are enabled by default. You can edit them in <code>widget</code> setting.</p><h2 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h2><h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h3><ul><li><a href="http://gruntjs.com/">Grunt</a> 0.4+</li><li>Hexo 2.4+</li></ul><h3 id="Grunt-tasks"><a href="#Grunt-tasks" class="headerlink" title="Grunt tasks"></a>Grunt tasks</h3><ul><li><strong>default</strong> - Download <a href="http://fancyapps.com/fancybox/">Fancybox</a> and <a href="http://fontawesome.io/">Font Awesome</a>.</li><li><strong>fontawesome</strong> - Only download <a href="http://fontawesome.io/">Font Awesome</a>.</li><li><strong>fancybox</strong> - Only download <a href="http://fancyapps.com/fancybox/">Fancybox</a>.</li><li><strong>clean</strong> - Clean temporarily files and downloaded files.</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
