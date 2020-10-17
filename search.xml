@@ -54,19 +54,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>About Me</title>
-    <url>/2020/10/14/about/me/</url>
-    <content><![CDATA[<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>I an an engineer of SMarCo</p>
-]]></content>
-      <categories>
-        <category>About Work</category>
-        <category>About Me</category>
-      </categories>
-      <tags>
-        <tag>about</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>About Work</title>
     <url>/2020/10/14/Work/</url>
     <content><![CDATA[<h1 id="Abstract-Here"><a href="#Abstract-Here" class="headerlink" title="Abstract Here"></a>Abstract Here</h1><p>I work in <strong><em>SMarCo</em></strong>  <strong>SMarCo</strong> <strong>SMarco</strong>, <em>SMarco</em>, <em>SMarCo</em></p>
@@ -188,6 +175,19 @@
 ]]></content>
       <categories>
         <category>About Work</category>
+      </categories>
+      <tags>
+        <tag>about</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>About Me</title>
+    <url>/2020/10/14/about/me/</url>
+    <content><![CDATA[<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>I an an engineer of SMarCo</p>
+]]></content>
+      <categories>
+        <category>About Work</category>
+        <category>About Me</category>
       </categories>
       <tags>
         <tag>about</tag>
