@@ -148,6 +148,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/31/flask_heroku_deploy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chain Yue">
+      <meta itemprop="description" content="An interesting website">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/31/flask_heroku_deploy/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-31 17:52:33 / Modified: 17:54:42" itemprop="dateCreated datePublished" datetime="2020-10-31T17:52:33+08:00">2020-10-31</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="Install-the-Heroku-CLI"><a href="#Install-the-Heroku-CLI" class="headerlink" title="Install the Heroku CLI"></a>Install the Heroku CLI</h4><p>Download and install the <a target="_blank" rel="noopener" href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku CLI</a>.</p>
+<p>If you haven’t already, log in to your Heroku account and follow the prompts to create a new SSH public key.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ heroku login</span><br></pre></td></tr></table></figure>
+
+<p>并输入你注册号的Heroku帐号及密码即可。</p>
+<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><p>环境准备就绪了，我们开始创建一个应用。浏览器打开<a target="_blank" rel="noopener" href="https://dashboard.heroku.com/apps">Heroku应用控制台</a>，点击右上角的”+“号，并选择”Create new app”。</p>
+<p>接下来打开命令行，我们要初始化本地及远程代码库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init                           # 创建本地代码库</span><br><span class="line">$ heroku git:remote -a ycj0217       # 连接远程Heroku的ycj0217代码库</span><br></pre></td></tr></table></figure>
+
+<p>现在，我们就可以编写应用代码，并提交到Heroku上去了。</p>
+<p>然后，我们就写个”requirements.txt”文件，应用部署时Heroku远程环境会自动执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip install -r requirements.txt</span><br><span class="line">$ pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>来安装应用依赖的库。我们的”requirements.txt”文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Flask&#x3D;&#x3D;1.1.2</span><br><span class="line">gunicorn&#x3D;&#x3D;19.4.5</span><br></pre></td></tr></table></figure>
+
+<p>项目依赖Flask很好理解，为什么还要依赖gunicorn呢？因为我们不能靠Flask自带的Web服务器来运行Flask程序，所以gunicorn是个很好的选择。还记得如何<a target="_blank" rel="noopener" href="http://www.bjhee.com/flask-ad8.html">通过Gunicorn运行Flask应用</a>吗？对于上面的代码，我们只需执行<code>gunicorn run:app</code>即可。现在我们要告诉Heroku，应该使用这个命令来运行我们的应用。怎么做呢，就是在项目根目录里创建一个”Procfile”文件，然后写上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">web: gunicorn run:app --log-file -</span><br></pre></td></tr></table></figure>
+
+<p>这就告诉Heroku，启动Web时，要执行<code>gunicorn run:app -log-file -</code>。后面的<code>-log-file -</code>参数，是为了让日志只打印到标准输出stdout上，因为Heroku不提供我们写本地磁盘的功能。</p>
+<h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><p>让我们执行git提交命令，来部署到远程Heroku上去吧：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;Initialize Project&quot;</span><br><span class="line">$ git push heroku master               # 提交到远程master分支</span><br></pre></td></tr></table></figure>
+
+<p>想看看效果，命令行里输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ heroku open</span><br></pre></td></tr></table></figure>
+
+<p>就会启动浏览器，并打开地址<code>https://ycj0217.herokuapp.com/</code>，当然你也可以直接浏览器访问这个地址。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/14/hello/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -266,7 +351,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-17 15:24:24" itemprop="dateModified" datetime="2020-10-17T15:24:24+08:00">2020-10-17</time>
+                <time title="Modified: 2020-10-20 19:06:02" itemprop="dateModified" datetime="2020-10-20T19:06:02+08:00">2020-10-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -776,7 +861,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-19 19:46:22" itemprop="dateModified" datetime="2020-10-19T19:46:22+08:00">2020-10-19</time>
+                <time title="Modified: 2020-10-20 19:17:17" itemprop="dateModified" datetime="2020-10-20T19:17:17+08:00">2020-10-20</time>
               </span>
 
           
@@ -790,7 +875,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Important-Cmd"><a href="#Important-Cmd" class="headerlink" title="Important Cmd"></a><strong>Important Cmd</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new xxx</span><br><span class="line"></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line">npm run git_push </span><br></pre></td></tr></table></figure>
+          <h2 id="Test-comment"><a href="#Test-comment" class="headerlink" title="Test comment"></a>Test comment</h2><p>here a comment , Yes It works</p>
+<p>//[//]: comment</p>
+<h1 id="Important-Cmd"><a href="#Important-Cmd" class="headerlink" title="Important Cmd"></a><strong>Important Cmd</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new xxx</span><br><span class="line"></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line">npm run git_push </span><br></pre></td></tr></table></figure>
 
 
 
@@ -802,9 +889,9 @@
 <h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/hexojs/hexo-theme-landscape.git themes/landscape</span><br></pre></td></tr></table></figure>
 
 <p><strong>Landscape requires Hexo 2.4 and above.</strong> If you would like to <em>enable</em> the RSS, the <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-feed">hexo-generate-feed</a> plugin is also required.</p>
-<h3 id="Enable"><a href="#Enable" class="headerlink" title="Enable"></a>Enable</h3><p>Modify <code>theme</code> setting in <code>_config.yml</code> to <code>landscape</code>.</p>
-<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/landscape</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<h3 id="Update-1"><a href="#Update-1" class="headerlink" title="Update"></a><em>Update</em></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd themes/landscape</span></span><br><span class="line"><span class="string">git</span> <span class="string">pull</span></span><br></pre></td></tr></table></figure>
+<h3 id="Enable"><a href="#Enable" class="headerlink" title="Enable"></a>Enable</h3><p>Modify <code>theme</code> s<a href="www.baidu.com">etting</a> in <code>_config.yml</code> to <code>landscape</code>.</p>
+<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><p>[]: </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd themes/landscape</span></span><br><span class="line"><span class="string">git</span> <span class="string">pull</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  Archives: /archives</span><br><span class="line">rss: /atom.xml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line">excerpt_link: Read More</span><br><span class="line">fancybox: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sidebar</span></span><br><span class="line">sidebar: right</span><br><span class="line">widgets:</span><br><span class="line">- category</span><br><span class="line">- tag</span><br><span class="line">- tagcloud</span><br><span class="line">- archives</span><br><span class="line">- recent_posts</span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line">google_analytics:</span><br><span class="line">favicon: /favicon.png</span><br><span class="line">twitter:</span><br><span class="line">google_plus:</span><br></pre></td></tr></table></figure>
 
@@ -924,7 +1011,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
